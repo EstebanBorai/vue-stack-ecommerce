@@ -1,30 +1,46 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <router-link class="navbar-brand" to="/">
+          Vue Stack ECommerce
+        </router-link>
+        <div class="ml-auto">
+          <div v-if="user.photoURL">
+            <img
+              :src="user.photoURL"
+              class="img-thumbnail profile-image"
+              alt="User Photo"
+            />
+            <router-link class="btn btn-primary my-2 my-sm-0" to="/cart">
+              <img
+                src="https://pngimg.com/uploads/shopping_cart/shopping_cart_PNG38.png"
+                width="50"
+                alt="Cart Icon"
+              />
+              <span class="badge badge-danger badge-pill">
+                {{ cart.length }}
+              </span>
+            </router-link>
+          </div>
+          <router-link v-else class="btn btn-primary my-2 my-sm-0" to="/login">Login</router-link>
+        </div>
+      </nav>
+    </div>
+    <div class="page-container">
+      <router-view />
+    </div>
   </div>
-  <router-view/>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { mapGetters } from 'vuex';
 
-#nav {
-  padding: 30px;
+export default {
+  name: 'App',
+  computed: {
+    ...mapGetters('account', ['user']),
+    ...mapGetters('product', ['cart']),
+  },
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>
