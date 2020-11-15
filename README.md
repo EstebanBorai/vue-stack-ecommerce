@@ -13,6 +13,9 @@ makes use of:
 * Vuex 4
 * Vue Router
 
+This project is build by following Dunebook's article on Vue 2:
+[Building an e-commerce app with VueJS, Vuex and Axios](https://codesource.io/building-an-e-commerce-app-with-vue-js-vuex-axios/)
+
 ## Project setup
 
 ```bash
