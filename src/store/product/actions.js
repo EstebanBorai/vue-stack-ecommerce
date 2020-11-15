@@ -12,14 +12,14 @@ export function getProducts({ commit }) {
     });
 }
 
-export function productDetail({ commit }, id) {
+export function productDetails({ commit }, id) {
   axios.get(productsURL, {
     params: {
       id
     }
   }).then((response) => {
-    if (response.length) {
-      commit('setProduct', response[0]);
+    if (response.data.length) {
+      commit('setProduct', response.data[0]);
     } else {
       console.error('Invalid ID provided', response);
     }

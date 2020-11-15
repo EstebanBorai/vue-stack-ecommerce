@@ -1,8 +1,9 @@
 export function setProducts(state, products) {
-  state.products = products;
+  state.products = products.data;
 }
 
 export function setProduct(state, product) {
+  console.log(product);
   state.product = product;
 }
 

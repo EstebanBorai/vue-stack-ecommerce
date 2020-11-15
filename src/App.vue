@@ -44,3 +44,36 @@ export default {
   },
 }
 </script>
+
+<style>
+  nav {
+    background-color: #016b6b;
+  }
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 25px;
+    color: #ffffff !important;
+  }
+  .profile-image {
+    width: 50px;
+    border-radius: 100% !important;
+  }
+  .page-container {
+    padding-top: 81px;
+  }
+  .btn {
+    border-radius: 0%;
+    font-weight: bold;
+    background: #016b6b;
+    border: #016b6b;
+  }
+  .btn:hover {
+    background: #00b4b4;
+  }
+  input {
+    border-radius: 0%;
+  }
+  .btn:focus {
+    background: #016b6b;
+  }
+</style>
